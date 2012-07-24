@@ -1,0 +1,237 @@
+/*
+Theme Name: maptual v1
+Description: Styling for version 1 of maptual.com
+Version: 1.0
+Author: Tim Campbell 
+Author URL: http://www.izonAnalytics.com
+*/
+
+
+/* -------------------------------------------------------------- 
+-----------------------------------------------------------------
+
+	DEFINITIONS:	Table of contents
+	AUTHOR:			Tim Campbell
+	VERSION:		10.12.2010
+	
+	CONTENTS:
+		
+	1	RESET
+			`Global reset
+			`Global reset-RESET
+			`Handles
+			
+	2	BASE STYLES
+			`self-clearing floats
+			`fluid images and objects
+			`optional vanity styles
+			`adios, Mozilla's dotted outline
+			`Paul Irish's Bulletproof @font-face syntax	
+	
+	3	TYPOGRAPHY
+			`Basic
+			`Headings
+			`Links
+			`Dropcap
+			'Misc
+			
+	4	LAYOUT
+			`Basics
+			`Header
+			`Navigation
+			`Banner
+			`Content
+			`Footer
+			
+	5	CLEARFIX
+	
+-----------------------------------------------------------------
+-------------------------------------------------------------- */
+
+/* *** RESET *** ------------------------------------------------------------------------------------*/
+
+/* 1	`Global reset (based upon 'reset.css' adaptations by Elliot Jay Stocks http://www.elliotjaystocks.com) */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0 }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:''}
+a { text-decoration:none }
+
+/* 2	`Global reset-RESET (restores some sensible defaults) */
+strong { font-weight:bold }
+em { font-style:italic }
+a img { border:none } /* Gets rid of IE's blue borders */
+a:active { outline:none }
+a { color: #999; }
+a:hover { color: #555; }
+
+/* 3	`Handles */
+div, ul, li, form { position:relative }
+.fix:after { content:" "; visibility:hidden; display:block; height:0; clear:both }
+* html .fix { height:1% }
+.hide { display:none } /* Handy for development */
+
+br.clearfix { clear:both; display:block; height:1px; margin:-1px 0 0 0 }
+
+
+
+/*-  BASE STYLES
+----------------------------------------------------------------------*/
+
+/*- `self-clearing floats ----------*/
+.mod:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/*- `fluid images and objects ----------*/
+
+img,
+object,
+embed {max-width: 100%;}
+
+
+/*- `optional vanity styles ----------*/
+
+::selection {background: #a4e2ff;}
+::-moz-selection {background: #a4e2ff;}
+
+img::selection {background: transparent;}
+img::-moz-selection {background: transparent;}
+
+@media only screen and (max-device-width: 480px) {
+
+	html {-webkit-text-size-adjust: none}
+	a {-webkit-tap-highlight-color: rgba(200,0,0,0.4);}
+
+}
+
+
+/*- `adios, Mozilla's dotted outline ----------*/
+a, button { outline: none; }
+:focus, button { -moz-outline-style: none; }
+
+
+/*- `Paul Irish's Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ ----------*/
+
+@font-face {
+  font-family: "futura-condensed-medium";
+  src: url('../fonts/futura-condensed-medium.eot');
+  src: local('☺'),
+         url('../fonts/futura-condensed-medium.woff') format('woff'), 
+         url('../fonts/futura-condensed-medium.ttf') format('truetype');
+}
+
+
+
+/* *** TYPOGRAPHY *** ------------------------------------------------------------------------------*/
+
+/* ----- `Headings
+----------------------------------------------------------------------------------------------------*/
+h2 { font: bold 45px/100% helvetica, arial, sans-serif; letter-spacing:-2px;}
+h3 { font: normal 24px/36px helvetica, arial, sans-serif; letter-spacing:-1px;}
+
+/* ----- `Links
+----------------------------------------------------------------------------------------------------*/
+a {}
+a:hover {}
+
+
+
+/* *** LAYOUT *** ----------------------------------------------------------------------------------*/
+
+/* ----- `Basics
+----------------------------------------------------------------------------------------------------*/
+body { color:#000; font-family:helvetica, arial, sans-serif;}
+/* orange: #ff3400 */
+html {}
+
+.container { margin:0 auto; width:860px;}
+
+
+/* ----- `Header
+----------------------------------------------------------------------------------------------------*/
+#masthead.section { background:#000; height:75px; }
+#masthead .container h1 a { 
+    background:url(../img/logo.png) top left no-repeat; 
+    display: block; 
+    float:left; 
+    height:46px; 
+    margin-top:16px; 
+    text-indent:-9999px; 
+    width:346px;
+}
+
+
+
+/* ----- `Banner
+----------------------------------------------------------------------------------------------------*/
+#content.section { background:url(../img/map-BG.jpg) -20% 0 repeat-x; border-bottom: 3px solid #ff3400; height:588px;}
+
+
+/* ----- `Content
+----------------------------------------------------------------------------------------------------*/
+.travel-note { background:url(../img/page-BG.png) no-repeat; height:137px; position:absolute; top:20px; left:-10px; width:444px;}
+.travel-note p { color:#ff3400; font-size:16px; line-height:20px; letter-spacing:1px; margin-top:38px; margin-left:45px; width:354px;}
+.welcome-text { position:absolute; top:30px;}
+.welcome-text h2 {font-size:36px; margin-bottom:5px;}
+.welcome-text p { font-size:18px; line-height:21px; width:430px;}
+.welcome-text p span { display:block; font-size:12px; margin-top:10px;}
+.poi-types {position:absolute; top:330px;}
+.poi-types ul li { color:#ff3400; font-size:14px; padding-bottom:4px;}
+.poi-types ul li.much-more { color:#000; margin-left:15px;}
+.poi-types p { margin-top:20px; font-size:12px; width:400px;}
+.iphone { background:url(../img/iphone-BG.png) no-repeat; height:752px; position:relative; top:-50px; left:480px; width:405px;}
+.screens { position:absolute; height:480px; width:320px; top:85px; right:16px;}
+img { position:absolute; height:480px; width:320px; top:0px; right:0px;}
+.glare { background:url(../img/iphone-glare.png) no-repeat; height:356px; position:absolute; top:-36px; right:-5px; width:175px; z-index:999;}
+
+/* ----- `Footer
+----------------------------------------------------------------------------------------------------*/
+#footer.section { margin-top:125px;}
+#footer .container { border-top:5px solid #e8e8e8;}
+#footer .container a { display:block; width:249px;}
+#footer .coming-soon { background:url(../img/app-store.gif) 0 0 no-repeat; height:81px; margin-top:-110px; width:249px;  }
+#footer p { color:#c7c7c7; font-size:12px; margin:0 auto; padding-top:10px; width:860px;}
+
+
+/* *** CLEARFIX *** --------------------------------------------------------------------------------*/
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
